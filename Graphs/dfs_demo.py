@@ -26,6 +26,11 @@ def depthFirstIterativePostOrder(graph, src):
         for vertex in graph[cur]:
             stack.append(vertex)
 
+def depthFirstRecursive(graph, src):
+    print(src)
+    for vertex in graph[src]:
+        depthFirstRecursive(graph, vertex)
+
 graph = {
     'a': ['b', 'c'],
     'b': ['d'],
@@ -36,7 +41,7 @@ graph = {
 }
 
 if __name__==("__main__"):
-    depthFirstIterativePreOrder(graph, 'a')
-    depthFirstIterativePostOrder(graph, 'a')
-    print()
-    depthFirstIterativePostOrder(graph, 'd')
+    # depthFirstIterativePreOrder(graph, 'a')
+    # depthFirstIterativePostOrder(graph, 'a')
+    # print()
+    depthFirstRecursive(graph, 'a')
